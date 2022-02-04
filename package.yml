@@ -1,0 +1,43 @@
+# Definiert das AddOn, grundlegende Einstellungen - Diese Detei ist unbedingt erforderlich
+# Dokumentation der `package.yml` https://redaxo.org/doku/master/addon-package
+# Alle hier gesetzten Werte können über `$addon->getProperty($key)` abgefragt werden
+
+package: ff_degas # Pflichtfeld
+version: "0.1.0" # Pflichtfeld
+author: Oliver Hörold # Pflichtfeld für FOR-AddOns
+supportpage: https://github.com/omphteliba/ff_degas # Github-Adresse des AddOns
+
+# Werte die mit `translate:` beginnen, werden anhand der Sprachdatei (lang/sprache.lang) übersetzt.
+# Der AddOn-Präfix (hier `ff_copy_tool_`) kann weggelassen werden.
+
+# Seiten des AddOns
+page:
+  title: "translate:navititle" # Bezeichnung in der REDAXO Navigation
+  icon: rex-icon fa-image # Icon von Font Awesome
+  perm: ff_degas[]
+  pjax: false # Hier kann die Verwendung von PJAX für das eigene AddOn gesteuert werden
+  # mit der Einstellung `prio` kann die Position im Hauptmenü beeinflusst werden
+  #prio: 10
+
+  # Unterseiten
+  subpages:
+    image:
+      title: 'translate:image'
+    config:
+      title: 'translate:config'
+      perm: ff_degas[config]  # config-Seite mit separaten Rechten
+    info:
+      title: 'translate:info'
+      itemclass: 'pull-right'
+      subpages:
+        info: { title: 'translate:info' }
+        changelog: { title: 'translate:changelog' }
+        lizenz: { title: 'translate:lizenz' }'
+
+  # Abhängigkeiten
+  # Anforderungen ans System oder anderere AddOns, um dieses AddOn installieren oder updaten zu können
+  requires:
+    redaxo: "^5.10" # benötigt mindestens REDAXO 5.10
+    php:
+      version: "^8.0" # benötigt mindestens PHP 8
+      extensions: [http]
