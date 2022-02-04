@@ -15,7 +15,13 @@
 
  ---
 
-##[1.0.0] -
+##[0.1.1] -
+### 🐛 Bugfixes
+* Feld zu rex_media hinzugefügt
+
+ ---
+
+##[0.1.0] -
 ### 🚀 Features
 * First release
 
