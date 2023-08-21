@@ -1,0 +1,32 @@
+#ff_degas
+ff_degas_navititle = Degas
+ff_degas_title = Degas
+ff_degas_subtitle = Create image descriptions with Azure Cognitive Services
+ff_degas_image = Image Description
+ff_degas_config = Settings
+ff_degas_info = Info
+ff_degas_changelog = Changelog
+ff_degas_license = License
+
+ff_degas_api_key = API Key 1
+ff_degas_api_region = Region
+ff_degas_api_language = Output language
+ff_degas_free_tier = Free Tier? (max. 20 requests per minute)
+
+ff_degas_images = Images
+ff_degas_time = Time
+ff_degas_image = Image
+ff_degas_filename = filename
+ff_degas_description = AI description
+ff_degas_tags = KI Keywords
+ff_degas_confidence = KI Confidence
+
+ff_degas_getAll = All images without description
+
+ff_degas_error_noImages = No images found without description
+
+ff_degas_infos = Infos
+ff_degas_countImages = Images without description:
+
+ff_degas_cronjob = FF Degas: fill empty image descriptions
+
