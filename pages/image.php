@@ -135,7 +135,7 @@ if (rex_get('func', 'string') === 'getAll') {
 $buttons = [];
 
 $n = [];
-$n['url'] = rex_url::backend() . 'index.php?page=ff_degas/image&func=getAll';
+$n['url'] = rex_url::backendPage('ff_degas/image', ['func' => 'getAll']);
 $n['label'] = $this->i18n('getAll');
 $n['attributes']['class'] = array('btn-primary');
 
