@@ -29,3 +29,5 @@ ff_degas_infos = Infos
 ff_degas_countImages = Bilder ohne Beschreibung:
 
 ff_degas_cronjob = FF Degas: leere Bild Beschreibungen befüllen
+
+ff_degas_config_save = Speichern

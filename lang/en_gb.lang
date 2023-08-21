@@ -30,3 +30,4 @@ ff_degas_countImages = Images without description:
 
 ff_degas_cronjob = FF Degas: fill empty image descriptions
 
+ff_degas_config_save = Save
