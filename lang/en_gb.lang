@@ -31,3 +31,5 @@ ff_degas_countImages = Images without description:
 ff_degas_cronjob = FF Degas: fill empty image descriptions
 
 ff_degas_config_save = Save
+
+ff_degas_error_httpRequest2NotInstalled = The PHP extension httpRequest2 is not installed. Please install it first.

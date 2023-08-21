@@ -15,16 +15,27 @@ class FfDegas
     public array $parameters = [];
     public HTTP_Request2 $request;
     public string $requestMethod = 'POST';
+    private bool $httpRequest2Loaded;
 
     public function __construct()
     {
-        require_once 'HTTP/Request2.php';
-        $this->setApiLang();
-        $this->setApiUrl();
-        $this->setMaxCount();
-        $this->setHeaders();
-        $this->setParameters();
-        $this->setRequest();
+        try {
+            require_once 'HTTP/Request2.php';
+            $this->httpRequest2Loaded = true;
+        } catch (Exception $e) {
+            rex_logger::logException($e);
+            $this->httpRequest2Loaded = false;
+            throw new \RuntimeException("http_request2 is not installed. Certain features may be disabled.");
+        }
+
+        if ($this->httpRequest2Loaded) {
+            $this->setApiLang();
+            $this->setApiUrl();
+            $this->setMaxCount();
+            $this->setHeaders();
+            $this->setParameters();
+            $this->setRequest();
+        }
     }
 
     /**
@@ -204,9 +215,9 @@ class FfDegas
     {
         $image = rex_sql::factory();
         $image->setDebug(false);
-        $query = 'UPDATE ' . rex::getTable('media') . ' 
+        $query = 'UPDATE ' . rex::getTable('media') . '
         SET med_description = "' . $description . '",
-        med_degas_description ="|true|" 
+        med_degas_description ="|true|"
         WHERE filename = "' . $filename . '"';
         $image->setQuery($query);
 
@@ -221,9 +232,9 @@ class FfDegas
     {
         // Todo: Azure AI Error InvalidRequest: Input image is too large.
         // Todo: Azure AI Error InvalidRequest: Image must be at least 50 pixels in width and height
-        $query = 'SELECT `filename` 
-FROM ' . rex::getTable('media') . ' 
-WHERE ( `filetype` = "image/png" 
+        $query = 'SELECT `filename`
+FROM ' . rex::getTable('media') . '
+WHERE ( `filetype` = "image/png"
 OR `filetype` = "image/jpeg"
 OR `filetype` = "image/gif"
 OR `filetype` = "image/bmp" )

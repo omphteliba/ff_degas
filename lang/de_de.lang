@@ -31,3 +31,5 @@ ff_degas_countImages = Bilder ohne Beschreibung:
 ff_degas_cronjob = FF Degas: leere Bild Beschreibungen befüllen
 
 ff_degas_config_save = Speichern
+
+ff_degas_error_httpRequest2NotInstalled = Das Modul httpRequest2 ist nicht installiert. Bitte installieren Sie das Modul über den Paketmanager.

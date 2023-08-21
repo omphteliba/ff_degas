@@ -3,7 +3,7 @@
 # Alle hier gesetzten Werte können über `$addon->getProperty($key)` abgefragt werden
 
 package: ff_degas # Pflichtfeld
-version: "0.1.0" # Pflichtfeld
+version: "0.1.1" # Pflichtfeld
 author: Oliver Hörold # Pflichtfeld für FOR-AddOns
 supportpage: https://github.com/omphteliba/ff_degas # Github-Adresse des AddOns
 
@@ -21,11 +21,11 @@ page:
 
   # Unterseiten
   subpages:
-    image:
-      title: 'translate:image'
     config:
       title: 'translate:config'
       perm: ff_degas[config]  # config-Seite mit separaten Rechten
+    image:
+      title: 'translate:image'
     info:
       title: 'translate:info'
       itemclass: 'pull-right'
@@ -40,4 +40,3 @@ page:
     redaxo: "^5.10" # benötigt mindestens REDAXO 5.10
     php:
       version: "^8.0" # benötigt mindestens PHP 8
-      extensions: [http]

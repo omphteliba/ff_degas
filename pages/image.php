@@ -7,7 +7,16 @@ if (rex_get('func', 'string') === 'getAll') {
     $id = 0;
     $out = '';
 
-    $degas = new FfDegas();
+    try {
+        $degas = new FfDegas();
+        // Other code that uses $degas
+    } catch (\RuntimeException $e) {
+        // Handle the error here, for example by displaying an error message to the user
+        rex_logger::logException($e);
+        echo '<div class="alert alert-danger">' . rex_addon::get('ff_degas')->i18n('error_httpRequest2NotInstalled') . '</div>';
+        // Optionally, you can terminate the script execution if this error is critical
+        exit();
+    }
 
     $lang = $degas->getApiLang();
     $api_url = $degas->getApiUrl();
