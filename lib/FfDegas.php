@@ -19,13 +19,14 @@ class FfDegas
 
     public function __construct()
     {
+
         try {
-            require_once 'HTTP/Request2.php';
+            require_once \rex_path::addon('ff_degas', 'lib/Request2.php');
             $this->httpRequest2Loaded = true;
         } catch (Exception $e) {
             rex_logger::logException($e);
             $this->httpRequest2Loaded = false;
-            throw new \RuntimeException("http_request2 is not installed. Certain features may be disabled.");
+            throw new \RuntimeException("http_request2 is not installed. Please install it.");
         }
 
         if ($this->httpRequest2Loaded) {
