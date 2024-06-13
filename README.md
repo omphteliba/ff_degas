@@ -7,7 +7,7 @@ Mehr Infos: https://westcentralus.dev.cognitive.microsoft.com/docs/services/comp
 - Azure Resource group und Azure AI Computer vision Resource anlegen auf https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision
 - Key 1 und Location/Region unter "Resource Management / Keys and endpoint" kopieren und in den Settings eintragen
 
-### Die Dateien müssen folge Kriterien erfüllen:
+### Die Dateien müssen folgende Kriterien erfüllen:
 - Unterstütze Bild Formate: JPEG, PNG, GIF, BMP.
 - Dateien müssen kleiner 4MB sein.
 - Die Bilder müssen größer als 50 x 50 Pixel sein.
